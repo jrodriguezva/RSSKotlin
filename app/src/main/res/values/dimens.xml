@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Card view. -->
+    <dimen name="card_corner_radius">8dp</dimen>
+    <dimen name="card_elevation">8dp</dimen>
+
+
+    <dimen name="spacing_large">24dp</dimen>
+    <dimen name="spacing_normal">16dp</dimen>
+    <dimen name="spacing_small">8dp</dimen>
+
+    <dimen name="not_data_available">34sp</dimen>
+    <dimen name="feed_details_title">22sp</dimen>
+    <dimen name="feed_details_text">16sp</dimen>
+    <dimen name="feed_details_notes">14sp</dimen>
+</resources>

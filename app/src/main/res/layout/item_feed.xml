@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="feed"
+            type="com.jrodiriguezva.rsskotlin.presentation.ui.rssdetail.FeedView" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/feedCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        app:cardElevation="@dimen/card_elevation"
+        app:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/feedImage"
+                style="@style/FeedImage"
+                android:layout_height="180dp"
+                app:imageUrl="@{feed.imageUrl}" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/backgroundTransparent"
+                app:layout_constraintBottom_toBottomOf="@+id/feedDetails"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/feedTitle"
+
+                />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/feedTitle"
+                style="@style/FeedTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                android:layout_marginBottom="@dimen/spacing_small"
+                android:lines="1"
+                android:text="@{feed.title}"
+                app:layout_constraintBottom_toTopOf="@+id/feedDetails"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/feedDetails"
+                style="@style/FeedText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_normal"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                android:maxLines="2"
+                android:paddingBottom="@dimen/spacing_small"
+                android:text="@{feed.description}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <LinearLayout
+            android:id="@+id/feedHolder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/ripple_effect"
+            android:orientation="horizontal" />
+
+    </androidx.cardview.widget.CardView>
+</layout>

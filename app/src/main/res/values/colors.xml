@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="primaryColor">#344955</color>
+    <color name="primaryLightColor">#5f7481</color>
+    <color name="primaryDarkColor">#0b222c</color>
+    <color name="secondaryColor">#f9aa33</color>
+    <color name="secondaryLightColor">#ffdc65</color>
+    <color name="secondaryDarkColor">#c17b00</color>
+    <color name="primaryTextColor">#232F34</color>
+    <color name="secondaryTextColor">#4A6572</color>
+    <color name="tertiaryTextColor">#b84a6572</color>
+    <color name="appbarTextColor">#FFFFFF</color>
+    <color name="foregroundColor">#FEFEFE</color>
+    <color name="backgroundColor">#EEF0F2</color>
+
+    <color name="slateGrey30">#b253555f</color>
+    <color name="backgroundTransparent">#9f000000</color>
+</resources>

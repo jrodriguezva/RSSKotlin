@@ -1,0 +1,92 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
+        <item name="colorAccent">@color/secondaryColor</item>
+    </style>
+
+    <style name="RSSTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
+        <item name="colorAccent">@color/secondaryColor</item>
+        <item name="android:colorBackground">@color/backgroundColor</item>
+        <item name="android:navigationBarColor">@color/primaryTextColor</item>
+        <item name="android:colorForeground">@color/foregroundColor</item>
+        <item name="android:textColorPrimary">@color/primaryLightColor</item>
+        <item name="android:textColorSecondary">@color/backgroundColor</item>
+    </style>
+
+
+    <style name="BaseToolbarStyle">
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="android:theme">@style/BaseToolbarTheme</item>
+    </style>
+
+    <style name="BaseToolbarTheme">
+        <item name="android:textColorPrimary">@color/appbarTextColor</item>
+        <item name="android:textColorSecondary">@color/secondaryColor</item>
+    </style>
+
+
+
+    <style name="FeedImage">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:transitionName">feedImageTransition</item>
+        <item name="android:background">@color/primaryColor</item>
+    </style>
+
+
+    <style name="NotData">
+        <item name="android:textColor">@color/primaryTextColor</item>
+        <item name="android:fontFamily">sans-serif-condensed</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/not_data_available</item>
+    </style>
+
+    <style name="FeedTitle">
+        <item name="android:textColor">@color/appbarTextColor</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/feed_details_title</item>
+    </style>
+
+    <style name="FeedText" parent="FeedTitle">
+        <item name="android:textColor">@color/appbarTextColor</item>
+        <item name="android:textSize">@dimen/feed_details_text</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:freezesText">true</item>
+    </style>
+
+
+    <style name="FeedDetailsTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/feed_details_title</item>
+        <item name="android:paddingRight">@dimen/spacing_large</item>
+        <item name="android:paddingLeft">@dimen/spacing_large</item>
+    </style>
+
+    <style name="FeedDetailsText" parent="FeedDetailsTitle">
+        <item name="android:textColor">@color/secondaryTextColor</item>
+        <item name="android:textSize">@dimen/feed_details_text</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:paddingBottom">@dimen/spacing_large</item>
+        <item name="android:freezesText">true</item>
+    </style>
+
+    <style name="FeedDetailsNotes" parent="FeedDetailsTitle">
+        <item name="android:textColor">@color/tertiaryTextColor</item>
+        <item name="android:textSize">@dimen/feed_details_text</item>
+        <item name="android:paddingBottom">@dimen/spacing_large</item>
+        <item name="android:freezesText">true</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+</resources>

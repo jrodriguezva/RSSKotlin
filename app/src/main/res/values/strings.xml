@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">RSSKotlin</string>
+
+    <string name="failure_network_connection">No hay conexión a internet.</string>
+    <string name="failure_server_error">Ha ocurrido un error en el server</string>
+    <string name="failure_feed_non_existent">El feed no existe.</string>
+    <string name="not_data_available">No hay feed disponibles</string>
+    <string name="refresh">Actualizar</string>
+    <string name="action_search">Buscar</string>
+</resources>
