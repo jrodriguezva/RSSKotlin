@@ -25,7 +25,11 @@
                 android:id="@+id/feedImage"
                 style="@style/FeedImage"
                 android:layout_height="180dp"
-                app:imageUrl="@{feed.imageUrl}" />
+                app:imageUrl="@{feed.imageUrl}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <View
                 android:layout_width="0dp"
                 android:layout_height="0dp"
@@ -36,6 +40,7 @@
                 app:layout_constraintTop_toTopOf="@+id/feedTitle"
 
                 />
+
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/feedTitle"
                 style="@style/FeedTitle"
