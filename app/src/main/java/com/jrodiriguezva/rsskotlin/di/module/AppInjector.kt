@@ -4,9 +4,6 @@ import android.app.Activity
 import android.app.Application
 import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
-import androidx.fragment.app.FragmentManager
 import com.jrodiriguezva.rsskotlin.AndroidApplication
 import com.jrodiriguezva.rsskotlin.di.component.DaggerAppComponent
 import dagger.android.AndroidInjection
@@ -59,7 +56,11 @@ object AppInjector {
             activity.supportFragmentManager
                 .registerFragmentLifecycleCallbacks(
                     object : androidx.fragment.app.FragmentManager.FragmentLifecycleCallbacks() {
-                        override fun onFragmentAttached(fm: androidx.fragment.app.FragmentManager, f: androidx.fragment.app.Fragment, context: Context) {
+                        override fun onFragmentAttached(
+                            fm: androidx.fragment.app.FragmentManager,
+                            f: androidx.fragment.app.Fragment,
+                            context: Context
+                        ) {
                             if (f is Injectable) {
                                 AndroidSupportInjection.inject(f)
                             }
