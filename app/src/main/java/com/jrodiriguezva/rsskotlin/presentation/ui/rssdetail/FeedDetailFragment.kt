@@ -8,7 +8,12 @@ import com.jrodiriguezva.rsskotlin.databinding.FragmentFeedDetailBinding
 import com.jrodiriguezva.rsskotlin.domain.error.Failure
 import com.jrodiriguezva.rsskotlin.domain.error.NoDataAvailableFailure
 import com.jrodiriguezva.rsskotlin.presentation.base.BaseFragmentBinding
-import com.jrodiriguezva.rsskotlin.utils.extension.*
+import com.jrodiriguezva.rsskotlin.utils.extension.close
+import com.jrodiriguezva.rsskotlin.utils.extension.failure
+import com.jrodiriguezva.rsskotlin.utils.extension.isVisible
+import com.jrodiriguezva.rsskotlin.utils.extension.loadUrlAndPostponeEnterTransition
+import com.jrodiriguezva.rsskotlin.utils.extension.observe
+import com.jrodiriguezva.rsskotlin.utils.extension.viewModel
 import kotlinx.android.synthetic.main.fragment_feed_detail.*
 import kotlinx.android.synthetic.main.toolbar.*
 import javax.inject.Inject

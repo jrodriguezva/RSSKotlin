@@ -54,6 +54,4 @@ class FeedRepository @Inject constructor(
         val feed = database.feedDao().findFeedById(feedId)?.convertToModel()
         return feed?.let { Either.Right(it) } ?: kotlin.run { Either.Left(NoDataAvailableFailure()) }
     }
-
-
 }

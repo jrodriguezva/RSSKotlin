@@ -4,8 +4,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.accessibility.AccessibilityEvent
 import androidx.core.view.accessibility.AccessibilityEventCompat.TYPE_VIEW_ACCESSIBILITY_FOCUSED
-import androidx.recyclerview.widget.*
-
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerViewAccessibilityDelegate
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 
 class EndlessScroll(
     private val recyclerView: RecyclerView,
@@ -65,7 +68,9 @@ class EndlessScroll(
             val firstVisibleItem = when (layoutManager) {
                 is StaggeredGridLayoutManager -> {
                     val lastVisibleItemPositions =
-                        (layoutManager as StaggeredGridLayoutManager).findLastVisibleItemPositions(null)
+                        (layoutManager as StaggeredGridLayoutManager).findLastVisibleItemPositions(
+                            null
+                        )
                     // get maximum element within the list
                     getLastVisibleItem(lastVisibleItemPositions)
                 }
@@ -105,7 +110,6 @@ class EndlessScroll(
         return maxSize
     }
 }
-
 
 fun RecyclerView.endless(visibleThreshold: Int = 10, loadMore: () -> Unit) {
     this.addOnScrollListener(EndlessScroll(this, visibleThreshold, loadMore))

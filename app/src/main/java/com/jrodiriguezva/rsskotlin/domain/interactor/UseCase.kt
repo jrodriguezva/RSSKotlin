@@ -2,7 +2,11 @@ package com.jrodiriguezva.rsskotlin.domain.interactor
 
 import com.jrodiriguezva.rsskotlin.domain.error.Failure
 import com.jrodiriguezva.rsskotlin.domain.funtional.Either
-import kotlinx.coroutines.*
+import kotlinx.coroutines.Deferred
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
+import kotlinx.coroutines.launch
 
 /**
  * Any use case in the application should implement this contract.

@@ -3,7 +3,7 @@ package com.jrodiriguezva.rsskotlin.data.datasource.remote.feed
 import com.jrodiriguezva.rsskotlin.domain.model.Feed
 import com.jrodiriguezva.rsskotlin.utils.extension.empty
 import com.squareup.moshi.Json
-import java.util.*
+import java.util.Date
 
 data class Article(
     @Json(name = "source")

@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>detekt report</title>
+    <style>
+h2 {
+  background-color: #666666;
+  padding: 0.2em;
+  color: #ffffff;
+}
+h3 {
+  background-color:#f8dfdf;
+  padding:0.5em;
+}
+.rule {
+  background-color: #dddddd;
+  padding: 0.3em;
+  font-weight: bold;
+}
+.description {
+  color:#000000;
+  padding:0.3em;
+}
+.location {
+  color: #690505;
+  font-family: monospace;
+}
+.message {
+  font-size: 0.8em;
+  color: #444444;
+}
+.rule-container {
+  border: 0.1em dashed #dddddd;
+  padding: 0.1em;
+  line-height: 1.5em;
+  margin-bottom: 8px;
+  margin-top: 8px;
+}
+pre {
+  border: 1px solid #e0e0e0;
+  overflow: scroll;
+}
+.lineno {
+  color: #999999;
+  background-color: #f0f0f0;
+}
+.error {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4AwCFR4T/3uLMgAAADxJREFUCNdNyLERQEAABMCjL4lQwIzcjErpguAL+C9AvgKJDbeD/PRpLdm35Hm+MU+cB+tCKaJW4L4YBy+CAiLJrFs9mgAAAABJRU5ErkJggg==) bottom repeat-x;
+}
+</style>
+</head>
+<body>
+
+<h1>detekt report</h1>
+
+<h2>Metrics</h2>
+
+<div>
+  <ul>
+    <li>number of kt files: 60</li>
+    <li>number of packages: 23</li>
+    <li>number of classes: 64</li>
+    <li>number of functions: 175</li>
+    <li>number of properties: 93</li>
+  </ul>
+</div>
+
+
+<h2>Complexity Report</h2>
+
+<div>
+  <ul>
+    <li>- 1949 lines of code (loc)</li>
+    <li>- 1495 source lines of code (sloc)</li>
+    <li>- 894 logical lines of code (lloc)</li>
+    <li>- 74 comment lines of code (cloc)</li>
+    <li>- 246 McCabe complexity (mcc)</li>
+    <li>- 65 number of total code smells</li>
+    <li>- 4 % comment source ratio</li>
+    <li>- 275 mcc per 1000 lloc</li>
+    <li>- 72 code smells per 1000 lloc</li>
+  </ul>
+</div>
+
+
+<h2>Findings</h2>
+<div>
+  <h3>complexity</h3>
+  <details id="NestedBlockDepth" open="open">
+    <summary class="rule-container"><span class="rule">NestedBlockDepth </span><span class="description">Excessive nesting leads to hidden complexity. Prefer extracting code to make it easier to understand.</span></summary>
+    <ul>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/data/respository/FeedRepository.kt:26:18</span><br><span class="message">Function getFeeds is nested too deeply.</span>
+        <pre><code><span class="lineno">  23 </span>
+<span class="lineno">  24 </span>    private var page = FIRST_PAGE
+<span class="lineno">  25 </span>
+<span class="lineno">  26 </span>    override fun <span class="error">getFeeds</span>(query: String?): Either&lt;Failure, List&lt;Feed&gt;&gt; {
+<span class="lineno">  27 </span>        val feedDao = database.feedDao()
+<span class="lineno">  28 </span>        return when (networkHandler.isConnected) {
+<span class="lineno">  29 </span>            true -&gt; {
+</code></pre>
+      </li>
+    </ul>
+  </details>
+  <h3>empty-blocks</h3>
+  <details id="EmptyFunctionBlock" open="open">
+    <summary class="rule-container"><span class="rule">EmptyFunctionBlock </span><span class="description">Empty block of code detected. As they serve no purpose they should be removed.</span></summary>
+    <ul>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/utils/extension/View.kt:63:56</span><br><span class="message">This empty block of code can be removed.</span>
+        <pre><code><span class="lineno">  60 </span>    Target&lt;Drawable&gt; {
+<span class="lineno">  61 </span>    var requestNew: Request? = null
+<span class="lineno">  62 </span>
+<span class="lineno">  63 </span>    override fun onLoadStarted(placeholder: Drawable?) <span class="error">{</span>
+<span class="lineno">  64 </span><span class="error">    }</span>
+<span class="lineno">  65 </span>
+<span class="lineno">  66 </span>    override fun getRequest() = requestNew
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/utils/extension/View.kt:68:27</span><br><span class="message">This empty block of code can be removed.</span>
+        <pre><code><span class="lineno">  65 </span>
+<span class="lineno">  66 </span>    override fun getRequest() = requestNew
+<span class="lineno">  67 </span>
+<span class="lineno">  68 </span>    override fun onStop() <span class="error">{</span>
+<span class="lineno">  69 </span><span class="error">    }</span>
+<span class="lineno">  70 </span>
+<span class="lineno">  71 </span>    override fun setRequest(request: Request?) {
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/utils/extension/View.kt:75:56</span><br><span class="message">This empty block of code can be removed.</span>
+        <pre><code><span class="lineno">  72 </span>        requestNew = request
+<span class="lineno">  73 </span>    }
+<span class="lineno">  74 </span>
+<span class="lineno">  75 </span>    override fun onLoadCleared(placeholder: Drawable?) <span class="error">{</span>
+<span class="lineno">  76 </span><span class="error">    }</span>
+<span class="lineno">  77 </span>
+<span class="lineno">  78 </span>    override fun onStart() {
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/utils/extension/View.kt:78:28</span><br><span class="message">This empty block of code can be removed.</span>
+        <pre><code><span class="lineno">  75 </span>    override fun onLoadCleared(placeholder: Drawable?) {
+<span class="lineno">  76 </span>    }
+<span class="lineno">  77 </span>
+<span class="lineno">  78 </span>    override fun onStart() <span class="error">{</span>
+<span class="lineno">  79 </span><span class="error">    }</span>
+<span class="lineno">  80 </span>
+<span class="lineno">  81 </span>    override fun onDestroy() {
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/utils/extension/View.kt:81:30</span><br><span class="message">This empty block of code can be removed.</span>
+        <pre><code><span class="lineno">  78 </span>    override fun onStart() {
+<span class="lineno">  79 </span>    }
+<span class="lineno">  80 </span>
+<span class="lineno">  81 </span>    override fun onDestroy() <span class="error">{</span>
+<span class="lineno">  82 </span><span class="error">    }</span>
+<span class="lineno">  83 </span>
+<span class="lineno">  84 </span>    override fun removeCallback(cb: SizeReadyCallback) {
+</code></pre>
+      </li>
+    </ul>
+  </details>
+  <h3>exceptions</h3>
+  <details id="TooGenericExceptionCaught" open="open">
+    <summary class="rule-container"><span class="rule">TooGenericExceptionCaught </span><span class="description">Caught exception is too generic. Prefer catching specific exceptions to the case that is currently handled.</span></summary>
+    <ul>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/di/module/viewmodel/ViewModelFactory.kt:20:18</span><br><span class="message">Caught exception is too generic. Prefer catching specific exceptions to the case that is currently handled.</span>
+        <pre><code><span class="lineno">  17 </span>        try {
+<span class="lineno">  18 </span>            @Suppress(&quot;UNCHECKED_CAST&quot;)
+<span class="lineno">  19 </span>            return creator.get() as T
+<span class="lineno">  20 </span>        } catch (<span class="error">e: Exception</span>) {
+<span class="lineno">  21 </span>            throw RuntimeException(e)
+<span class="lineno">  22 </span>        }
+<span class="lineno">  23 </span>    }
+</code></pre>
+      </li>
+    </ul>
+  </details>
+  <details id="TooGenericExceptionThrown" open="open">
+    <summary class="rule-container"><span class="rule">TooGenericExceptionThrown </span><span class="description">Thrown exception is too generic. Prefer throwing project specific exceptions to handle error cases.</span></summary>
+    <ul>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/di/module/viewmodel/ViewModelFactory.kt:21:13</span><br><span class="message">RuntimeException is a too generic Exception. Prefer throwing specific exceptions that indicate a specific error case.</span>
+        <pre><code><span class="lineno">  18 </span>            @Suppress(&quot;UNCHECKED_CAST&quot;)
+<span class="lineno">  19 </span>            return creator.get() as T
+<span class="lineno">  20 </span>        } catch (e: Exception) {
+<span class="lineno">  21 </span>            <span class="error">throw RuntimeException(e)</span>
+<span class="lineno">  22 </span>        }
+<span class="lineno">  23 </span>    }
+<span class="lineno">  24 </span>}
+</code></pre>
+      </li>
+    </ul>
+  </details>
+  <h3>naming</h3>
+  <details id="MemberNameEqualsClassName" open="open">
+    <summary class="rule-container"><span class="rule">MemberNameEqualsClassName </span><span class="description">A member should not be given the same name as its parent class or object.</span></summary>
+    <ul>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/domain/funtional/Either.kt:16:5</span><br><span class="message">A member is named after the class. This might result in confusion. Either rename the member or change it to a constructor.</span>
+        <pre><code><span class="lineno">  13 </span>    fun &lt;L&gt; left(a: L) = Left(a)
+<span class="lineno">  14 </span>    fun &lt;R&gt; right(b: R) = Right(b)
+<span class="lineno">  15 </span>
+<span class="lineno">  16 </span>    <span class="error">fun either(fnL: (L) -&gt; Any, fnR: (R) -&gt; Any): Any =</span>
+<span class="lineno">  17 </span><span class="error">        when (this) {</span>
+<span class="lineno">  18 </span><span class="error">            is Left -&gt; fnL(a)</span>
+<span class="lineno">  19 </span><span class="error">            is Right -&gt; fnR(b)</span>
+</code></pre>
+      </li>
+    </ul>
+  </details>
+  <details id="MatchingDeclarationName" open="open">
+    <summary class="rule-container"><span class="rule">MatchingDeclarationName </span><span class="description">If a source file contains only a single non-private top-level class or object, the file name should reflect the case-sensitive name plus the .kt extension.</span></summary>
+    <ul>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/domain/model/Models.kt:5:1</span><br><span class="message">The file name 'Models.kt' does not match the name of the single top-level declaration 'Feed'.</span>
+        <pre><code><span class="lineno">   2 </span>
+<span class="lineno">   3 </span>import java.util.Date
+<span class="lineno">   4 </span>
+<span class="lineno">   5 </span><span class="error">data class Feed(</span>
+<span class="lineno">   6 </span><span class="error">    val id: Long? = null,</span>
+<span class="lineno">   7 </span><span class="error">    val author: String,</span>
+<span class="lineno">   8 </span><span class="error">    val title: String,</span>
+</code></pre>
+      </li>
+    </ul>
+  </details>
+  <h3>style</h3>
+  <details id="NewLineAtEndOfFile" open="open">
+    <summary class="rule-container"><span class="rule">NewLineAtEndOfFile </span><span class="description">Checks whether files end with a line separator.</span></summary>
+    <ul>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/di/module/viewmodel/ViewModelFactory.kt:24:1</span><br><span class="message">The file ViewModelFactory.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">  21 </span>            throw RuntimeException(e)
+<span class="lineno">  22 </span>        }
+<span class="lineno">  23 </span>    }
+<span class="lineno">  24 </span><span class="error">}</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/di/module/viewmodel/ViewModelModule.kt:26:1</span><br><span class="message">The file ViewModelModule.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">  23 </span>    @ViewModelKey(FeedDetailViewModel::class)
+<span class="lineno">  24 </span>    abstract fun bindsFeedDetailViewModel(feedDetailViewModel: FeedDetailViewModel): ViewModel
+<span class="lineno">  25 </span>
+<span class="lineno">  26 </span><span class="error">}</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/di/module/viewmodel/ViewModelKey.kt:9:72</span><br><span class="message">The file ViewModelKey.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">   6 </span>
+<span class="lineno">   7 </span>@MapKey
+<span class="lineno">   8 </span>@Target(AnnotationTarget.FUNCTION, AnnotationTarget.PROPERTY_GETTER, AnnotationTarget.PROPERTY_SETTER)
+<span class="lineno">   9 </span>internal annotation class ViewModelKey(val value: KClass&lt;out ViewModel&gt;<span class="error">)</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/di/module/AppModule.kt:57:1</span><br><span class="message">The file AppModule.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">  54 </span>        return Moshi.Builder()
+<span class="lineno">  55 </span>            .add(KotlinJsonAdapterFactory()).add(Date::class.java, Rfc3339DateJsonAdapter().nullSafe()).build()
+<span class="lineno">  56 </span>    }
+<span class="lineno">  57 </span><span class="error">}</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/di/module/DaoModule.kt:28:1</span><br><span class="message">The file DaoModule.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">  25 </span>        )
+<span class="lineno">  26 </span>            .fallbackToDestructiveMigration().build()
+<span class="lineno">  27 </span>    }
+<span class="lineno">  28 </span><span class="error">}</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/di/module/Injectable.kt:6:20</span><br><span class="message">The file Injectable.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">   3 </span>/**
+<span class="lineno">   4 </span> * Marks an activity / fragment injectable.
+<span class="lineno">   5 </span> */
+<span class="lineno">   6 </span>interface Injectabl<span class="error">e</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/di/module/AppInjector.kt:60:1</span><br><span class="message">The file AppInjector.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">  57 </span>                )
+<span class="lineno">  58 </span>        }
+<span class="lineno">  59 </span>    }
+<span class="lineno">  60 </span><span class="error">}</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/di/module/ActivityBindingModule.kt:21:1</span><br><span class="message">The file ActivityBindingModule.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">  18 </span>    @ActivityScoped
+<span class="lineno">  19 </span>    @ContributesAndroidInjector(modules = [FeedDetailModule::class])
+<span class="lineno">  20 </span>    abstract fun bindFeedDetailActivity(): FeedDetailActivity
+<span class="lineno">  21 </span><span class="error">}</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/di/component/AppComponent.kt:29:1</span><br><span class="message">The file AppComponent.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">  26 </span>    fun dataBase(): FeedDatabase
+<span class="lineno">  27 </span>
+<span class="lineno">  28 </span>    fun inject(app: AndroidApplication)
+<span class="lineno">  29 </span><span class="error">}</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/di/scoped/ActivityScoped.kt:8:31</span><br><span class="message">The file ActivityScoped.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">   5 </span>@MustBeDocumented
+<span class="lineno">   6 </span>@Scope
+<span class="lineno">   7 </span>@Retention(AnnotationRetention.RUNTIME)
+<span class="lineno">   8 </span>annotation class ActivityScope<span class="error">d</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/AndroidApplication.kt:26:1</span><br><span class="message">The file AndroidApplication.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">  23 </span>
+<span class="lineno">  24 </span>    private fun injectMembers() = AppInjector.init(this)
+<span class="lineno">  25 </span>
+<span class="lineno">  26 </span><span class="error">}</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/utils/extension/Context.kt:22:5</span><br><span class="message">The file Context.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">  19 </span>    .makeText(this, message, Toast.LENGTH_SHORT)
+<span class="lineno">  20 </span>    .apply {
+<span class="lineno">  21 </span>        show()
+<span class="lineno">  22 </span>    <span class="error">}</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/utils/extension/LiveData.kt:10:1</span><br><span class="message">The file LiveData.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">   7 </span>fun &lt;T&gt; LiveData&lt;T&gt;.reObserve(owner: LifecycleOwner, observer: Observer&lt;T?&gt;) {
+<span class="lineno">   8 </span>    removeObserver(observer)
+<span class="lineno">   9 </span>    observe(owner, observer)
+<span class="lineno">  10 </span><span class="error">}</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/utils/NetworkHandler.kt:15:1</span><br><span class="message">The file NetworkHandler.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">  12 </span>class NetworkHandler
+<span class="lineno">  13 </span>@Inject constructor(private val context: Context) {
+<span class="lineno">  14 </span>    val isConnected get() = context.networkInfo?.isConnected ?: false
+<span class="lineno">  15 </span><span class="error">}</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/data/datasource/local/FeedDatabase.kt:13:1</span><br><span class="message">The file FeedDatabase.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">  10 </span>@TypeConverters(Converters::class)
+<span class="lineno">  11 </span>abstract class FeedDatabase : RoomDatabase() {
+<span class="lineno">  12 </span>    abstract fun feedDao(): FeedDao
+<span class="lineno">  13 </span><span class="error">}</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/data/datasource/local/Converters.kt:16:1</span><br><span class="message">The file Converters.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">  13 </span>    fun dateToTimestamp(date: Date?): Long? {
+<span class="lineno">  14 </span>        return date?.time
+<span class="lineno">  15 </span>    }
+<span class="lineno">  16 </span><span class="error">}</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/data/datasource/local/feed/FeedData.kt:51:1</span><br><span class="message">The file FeedData.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">  48 </span>        url = this.url,
+<span class="lineno">  49 </span>        imageUrl = this.urlToImage
+<span class="lineno">  50 </span>    )
+<span class="lineno">  51 </span><span class="error">}</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/data/datasource/local/feed/FeedDao.kt:33:1</span><br><span class="message">The file FeedDao.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">  30 </span>
+<span class="lineno">  31 </span>    @Query(&quot;DELETE FROM feed&quot;)
+<span class="lineno">  32 </span>    fun removeAll()
+<span class="lineno">  33 </span><span class="error">}</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/data/datasource/remote/FeedService.kt:15:1</span><br><span class="message">The file FeedService.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">  12 </span>
+<span class="lineno">  13 </span>    override fun getFeeds(search: String?, language: String?, sortBy: String?, apiKey: String, page: Int) =
+<span class="lineno">  14 </span>        feedApi.getFeeds(search, language, sortBy, apiKey, page)
+<span class="lineno">  15 </span><span class="error">}</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/data/datasource/remote/feed/FeedResponse.kt:13:1</span><br><span class="message">The file FeedResponse.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">  10 </span>    @Json(name = &quot;articles&quot;)
+<span class="lineno">  11 </span>    var articles: List&lt;Article&gt;? = null
+<span class="lineno">  12 </span>
+<span class="lineno">  13 </span><span class="error">)</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/data/datasource/remote/feed/Source.kt:10:1</span><br><span class="message">The file Source.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">   7 </span>    private val id: String? = null,
+<span class="lineno">   8 </span>    @Json(name = &quot;name&quot;)
+<span class="lineno">   9 </span>    private val name: String? = null
+<span class="lineno">  10 </span><span class="error">)</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/data/datasource/remote/feed/Article.kt:46:1</span><br><span class="message">The file Article.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">  43 </span>        url = this.url ?: String.empty(),
+<span class="lineno">  44 </span>        imageUrl = this.urlToImage ?: String.empty()
+<span class="lineno">  45 </span>    )
+<span class="lineno">  46 </span><span class="error">}</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/domain/repository/Repository.kt:12:1</span><br><span class="message">The file Repository.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">   9 </span>    fun getFeeds(query: String?): Either&lt;Failure, List&lt;Feed&gt;&gt;
+<span class="lineno">  10 </span>
+<span class="lineno">  11 </span>    fun getFeed(feedId: Long): Either&lt;Failure, Feed&gt;
+<span class="lineno">  12 </span><span class="error">}</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/domain/funtional/Either.kt:37:90</span><br><span class="message">The file Either.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">  34 </span>        is Either.Right -&gt; fn(b)
+<span class="lineno">  35 </span>    }
+<span class="lineno">  36 </span>
+<span class="lineno">  37 </span>fun &lt;T, L, R&gt; Either&lt;L, R&gt;.map(fn: (R) -&gt; (T)): Either&lt;L, T&gt; = this.flatMap(fn.c(::right)<span class="error">)</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/domain/model/Models.kt:13:1</span><br><span class="message">The file Models.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">  10 </span>    val url: String,
+<span class="lineno">  11 </span>    val publishedAt: Date,
+<span class="lineno">  12 </span>    val imageUrl: String
+<span class="lineno">  13 </span><span class="error">)</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/domain/error/NoDataAvailableFailure.kt:3:55</span><br><span class="message">The file NoDataAvailableFailure.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">   1 </span>package com.jrodiriguezva.rsskotlin.domain.error
+<span class="lineno">   2 </span>
+<span class="lineno">   3 </span>class NoDataAvailableFailure : Failure.FeatureFailure(<span class="error">)</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/domain/error/Failure.kt:13:1</span><br><span class="message">The file Failure.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">  10 </span>
+<span class="lineno">  11 </span>    /** * Extend this class for feature specific failures.*/
+<span class="lineno">  12 </span>    abstract class FeatureFailure : Failure()
+<span class="lineno">  13 </span><span class="error">}</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/domain/interactor/UseCase.kt:32:1</span><br><span class="message">The file UseCase.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">  29 </span>    }
+<span class="lineno">  30 </span>
+<span class="lineno">  31 </span>    class None
+<span class="lineno">  32 </span><span class="error">}</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/domain/interactor/GetFeeds.kt:14:1</span><br><span class="message">The file GetFeeds.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">  11 </span>
+<span class="lineno">  12 </span>    override suspend fun run(params: String?) = feedRepository.getFeeds(params)
+<span class="lineno">  13 </span>
+<span class="lineno">  14 </span><span class="error">}</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/domain/interactor/GetFeedById.kt:14:1</span><br><span class="message">The file GetFeedById.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">  11 </span>
+<span class="lineno">  12 </span>    override suspend fun run(params: Long) = feedRepository.getFeed(params)
+<span class="lineno">  13 </span>
+<span class="lineno">  14 </span><span class="error">}</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/presentation/ui/EndlessScroll.kt:116:1</span><br><span class="message">The file EndlessScroll.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno"> 113 </span>
+<span class="lineno"> 114 </span>fun RecyclerView.endless(visibleThreshold: Int = 10, loadMore: () -&gt; Unit) {
+<span class="lineno"> 115 </span>    this.addOnScrollListener(EndlessScroll(this, visibleThreshold, loadMore))
+<span class="lineno"> 116 </span><span class="error">}</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/presentation/ui/rssdetail/FeedDetailViewModel.kt:26:1</span><br><span class="message">The file FeedDetailViewModel.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">  23 </span>    fun onClickOpenUrl(view: View) {
+<span class="lineno">  24 </span>        openUrl(OpenUrl.Params(feed.url))
+<span class="lineno">  25 </span>    }
+<span class="lineno">  26 </span><span class="error">}</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/presentation/ui/rssdetail/OpenUrl.kt:22:1</span><br><span class="message">The file OpenUrl.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">  19 </span>    }
+<span class="lineno">  20 </span>
+<span class="lineno">  21 </span>    data class Params(val url: String)
+<span class="lineno">  22 </span><span class="error">}</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/presentation/ui/rssdetail/FeedView.kt:82:1</span><br><span class="message">The file FeedView.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">  79 </span>        fun convertToData(feed: List&lt;Feed&gt;) = feed.map { convertToData(it) }
+<span class="lineno">  80 </span>    }
+<span class="lineno">  81 </span>
+<span class="lineno">  82 </span><span class="error">}</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/presentation/ui/rsslist/FeedListViewModel.kt:30:1</span><br><span class="message">The file FeedListViewModel.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">  27 </span>        this.query = query
+<span class="lineno">  28 </span>        this.feeds.value = feedsList.filter { it.title.contains(query) }
+<span class="lineno">  29 </span>    }
+<span class="lineno">  30 </span><span class="error">}</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/presentation/ui/rsslist/FeedsAdapter.kt:38:1</span><br><span class="message">The file FeedsAdapter.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">  35 </span>            itemFeedBinding.executePendingBindings()
+<span class="lineno">  36 </span>        }
+<span class="lineno">  37 </span>    }
+<span class="lineno">  38 </span><span class="error">}</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/presentation/ui/rsslist/FeedListFragment.kt:122:1</span><br><span class="message">The file FeedListFragment.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno"> 119 </span>            }
+<span class="lineno"> 120 </span>        })
+<span class="lineno"> 121 </span>    }
+<span class="lineno"> 122 </span><span class="error">}</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/presentation/navigation/Navigator.kt:32:1</span><br><span class="message">The file Navigator.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">  29 </span>    }
+<span class="lineno">  30 </span>
+<span class="lineno">  31 </span>    class Extras(val transitionSharedElement: View)
+<span class="lineno">  32 </span><span class="error">}</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/presentation/binding/loadImage.kt:10:87</span><br><span class="message">The file loadImage.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">   7 </span>
+<span class="lineno">   8 </span>@BindingAdapter(&quot;imageUrl&quot;)
+<span class="lineno">   9 </span>fun ImageView.loadImage(url: String?) =
+<span class="lineno">  10 </span>    url?.let { if (it.isNotBlank()) this.loadFromUrl(url, R.drawable.ic_broken_image) <span class="error">}</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/presentation/base/BaseViewModel.kt:14:1</span><br><span class="message">The file BaseViewModel.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">  11 </span>    protected fun handleFailure(failure: Failure) {
+<span class="lineno">  12 </span>        this.failure.value = failure
+<span class="lineno">  13 </span>    }
+<span class="lineno">  14 </span><span class="error">}</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/presentation/base/BaseActivity.kt:41:1</span><br><span class="message">The file BaseActivity.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">  38 </span>    lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector&lt;androidx.fragment.app.Fragment&gt;
+<span class="lineno">  39 </span>
+<span class="lineno">  40 </span>    override fun supportFragmentInjector() = dispatchingAndroidInjector
+<span class="lineno">  41 </span><span class="error">}</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/presentation/base/BaseFragmentActivity.kt:36:1</span><br><span class="message">The file BaseFragmentActivity.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">  33 </span>    abstract fun fragment(): BaseFragment
+<span class="lineno">  34 </span>
+<span class="lineno">  35 </span>    abstract fun getLayout(): Int
+<span class="lineno">  36 </span><span class="error">}</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/presentation/base/BaseFragment.kt:61:1</span><br><span class="message">The file BaseFragment.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">  58 </span>        Snackbar.make(viewContainer, message, Snackbar.LENGTH_SHORT).show()
+<span class="lineno">  59 </span>
+<span class="lineno">  60 </span>
+<span class="lineno">  61 </span><span class="error">}</span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/presentation/base/BaseFragmentBinding.kt:26:1</span><br><span class="message">The file BaseFragmentBinding.kt is not ending with a new line.</span>
+        <pre><code><span class="lineno">  23 </span>        return (binding as ViewDataBinding).root
+<span class="lineno">  24 </span>    }
+<span class="lineno">  25 </span>
+<span class="lineno">  26 </span><span class="error">}</span>
+</code></pre>
+      </li>
+    </ul>
+  </details>
+  <details id="MagicNumber" open="open">
+    <summary class="rule-container"><span class="rule">MagicNumber </span><span class="description">Report magic numbers. Magic number is a numeric literal that is not defined as a constant and hence it's unclear what the purpose of this number is. It's better to declare such numbers as constants and give them a proper name. By default, -1, 0, 1, and 2 are not considered to be magic numbers.</span></summary>
+    <ul>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/di/module/AppModule.kt:43:37</span><br><span class="message">This expression contains a magic number. Consider defining it to a well named constant.</span>
+        <pre><code><span class="lineno">  40 </span>        val okHttpClientBuilder: OkHttpClient.Builder = OkHttpClient.Builder()
+<span class="lineno">  41 </span>
+<span class="lineno">  42 </span>        val cacheDir = File(application.cacheDir, UUID.randomUUID().toString())
+<span class="lineno">  43 </span>        val cache = Cache(cacheDir, <span class="error">10</span> * 1024 * 1024)
+<span class="lineno">  44 </span>        return okHttpClientBuilder.cache(cache)
+<span class="lineno">  45 </span>            .connectTimeout(60, TimeUnit.SECONDS)
+<span class="lineno">  46 </span>            .readTimeout(60, TimeUnit.SECONDS)
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/di/module/AppModule.kt:43:42</span><br><span class="message">This expression contains a magic number. Consider defining it to a well named constant.</span>
+        <pre><code><span class="lineno">  40 </span>        val okHttpClientBuilder: OkHttpClient.Builder = OkHttpClient.Builder()
+<span class="lineno">  41 </span>
+<span class="lineno">  42 </span>        val cacheDir = File(application.cacheDir, UUID.randomUUID().toString())
+<span class="lineno">  43 </span>        val cache = Cache(cacheDir, 10 * <span class="error">1024</span> * 1024)
+<span class="lineno">  44 </span>        return okHttpClientBuilder.cache(cache)
+<span class="lineno">  45 </span>            .connectTimeout(60, TimeUnit.SECONDS)
+<span class="lineno">  46 </span>            .readTimeout(60, TimeUnit.SECONDS)
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/di/module/AppModule.kt:43:49</span><br><span class="message">This expression contains a magic number. Consider defining it to a well named constant.</span>
+        <pre><code><span class="lineno">  40 </span>        val okHttpClientBuilder: OkHttpClient.Builder = OkHttpClient.Builder()
+<span class="lineno">  41 </span>
+<span class="lineno">  42 </span>        val cacheDir = File(application.cacheDir, UUID.randomUUID().toString())
+<span class="lineno">  43 </span>        val cache = Cache(cacheDir, 10 * 1024 * <span class="error">1024</span>)
+<span class="lineno">  44 </span>        return okHttpClientBuilder.cache(cache)
+<span class="lineno">  45 </span>            .connectTimeout(60, TimeUnit.SECONDS)
+<span class="lineno">  46 </span>            .readTimeout(60, TimeUnit.SECONDS)
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/di/module/AppModule.kt:45:29</span><br><span class="message">This expression contains a magic number. Consider defining it to a well named constant.</span>
+        <pre><code><span class="lineno">  42 </span>        val cacheDir = File(application.cacheDir, UUID.randomUUID().toString())
+<span class="lineno">  43 </span>        val cache = Cache(cacheDir, 10 * 1024 * 1024)
+<span class="lineno">  44 </span>        return okHttpClientBuilder.cache(cache)
+<span class="lineno">  45 </span>            .connectTimeout(<span class="error">60</span>, TimeUnit.SECONDS)
+<span class="lineno">  46 </span>            .readTimeout(60, TimeUnit.SECONDS)
+<span class="lineno">  47 </span>            .writeTimeout(180, TimeUnit.SECONDS)
+<span class="lineno">  48 </span>            .build()
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/di/module/AppModule.kt:46:26</span><br><span class="message">This expression contains a magic number. Consider defining it to a well named constant.</span>
+        <pre><code><span class="lineno">  43 </span>        val cache = Cache(cacheDir, 10 * 1024 * 1024)
+<span class="lineno">  44 </span>        return okHttpClientBuilder.cache(cache)
+<span class="lineno">  45 </span>            .connectTimeout(60, TimeUnit.SECONDS)
+<span class="lineno">  46 </span>            .readTimeout(<span class="error">60</span>, TimeUnit.SECONDS)
+<span class="lineno">  47 </span>            .writeTimeout(180, TimeUnit.SECONDS)
+<span class="lineno">  48 </span>            .build()
+<span class="lineno">  49 </span>    }
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/di/module/AppModule.kt:47:27</span><br><span class="message">This expression contains a magic number. Consider defining it to a well named constant.</span>
+        <pre><code><span class="lineno">  44 </span>        return okHttpClientBuilder.cache(cache)
+<span class="lineno">  45 </span>            .connectTimeout(60, TimeUnit.SECONDS)
+<span class="lineno">  46 </span>            .readTimeout(60, TimeUnit.SECONDS)
+<span class="lineno">  47 </span>            .writeTimeout(<span class="error">180</span>, TimeUnit.SECONDS)
+<span class="lineno">  48 </span>            .build()
+<span class="lineno">  49 </span>    }
+<span class="lineno">  50 </span>
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/data/respository/ApiResponse.kt:18:56</span><br><span class="message">This expression contains a magic number. Consider defining it to a well named constant.</span>
+        <pre><code><span class="lineno">  15 </span>        fun &lt;T&gt; create(response: Response&lt;T&gt;): ApiResponse&lt;T&gt; {
+<span class="lineno">  16 </span>            return if (response.isSuccessful) {
+<span class="lineno">  17 </span>                val body = response.body()
+<span class="lineno">  18 </span>                if (body == null || response.code() == <span class="error">204</span>) {
+<span class="lineno">  19 </span>                    ApiEmptyResponse()
+<span class="lineno">  20 </span>                } else {
+<span class="lineno">  21 </span>                    ApiSuccessResponse(body = body)
+</code></pre>
+      </li>
+    </ul>
+  </details>
+  <details id="MaxLineLength" open="open">
+    <summary class="rule-container"><span class="rule">MaxLineLength </span><span class="description">Line detected that is longer than the defined maximum line length in the code style.</span></summary>
+    <ul>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/di/component/AppComponent.kt:15:1</span><br><span class="message">Line detected that is longer than the defined maximum line length in the code style.</span>
+        <pre><code><span class="lineno">  12 </span>import javax.inject.Singleton
+<span class="lineno">  13 </span>
+<span class="lineno">  14 </span>@Singleton
+<span class="lineno">  15 </span><span class="error">@Component(modules = [AndroidSupportInjectionModule::class, AppModule::class, DaoModule::class, ActivityBindingModule::class])</span>
+<span class="lineno">  16 </span>interface AppComponent {
+<span class="lineno">  17 </span>
+<span class="lineno">  18 </span>    @Component.Builder
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/utils/extension/Fragment.kt:12:1</span><br><span class="message">Line detected that is longer than the defined maximum line length in the code style.</span>
+        <pre><code><span class="lineno">   9 </span>import com.jrodiriguezva.rsskotlin.presentation.base.BaseFragment
+<span class="lineno">  10 </span>import kotlinx.android.synthetic.main.activity_layout.*
+<span class="lineno">  11 </span>
+<span class="lineno">  12 </span><span class="error">inline</span> fun androidx.fragment.app.FragmentManager.inTransaction(func: androidx.fragment.app.FragmentTransaction.() -&gt; androidx.fragment.app.FragmentTransaction) =
+<span class="lineno">  13 </span>    beginTransaction().func().commit()
+<span class="lineno">  14 </span>
+<span class="lineno">  15 </span>inline fun &lt;reified T : ViewModel&gt; androidx.fragment.app.Fragment.viewModel(
+</code></pre>
+      </li>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/data/respository/FeedRepository.kt:38:29</span><br><span class="message">Line detected that is longer than the defined maximum line length in the code style.</span>
+        <pre><code><span class="lineno">  35 </span>                        val map = response.body.articles?.map { it.convertToModel() }
+<span class="lineno">  36 </span>                        map?.let { mapSafe -&gt;
+<span class="lineno">  37 </span>                            if (page++ == FIRST_PAGE) feedDao.removeAll()
+<span class="lineno">  38 </span>                            <span class="error">Either.Right(feedDao.save(convertToData(mapSafe)).map { it.convertToModel() }.sortedBy { it.publishedAt })</span>
+<span class="lineno">  39 </span>                        } ?: kotlin.run { Either.Left(Failure.ServerError) }
+<span class="lineno">  40 </span>
+<span class="lineno">  41 </span>                    }
+</code></pre>
+      </li>
+    </ul>
+  </details>
+  <details id="FunctionOnlyReturningConstant" open="open">
+    <summary class="rule-container"><span class="rule">FunctionOnlyReturningConstant </span><span class="description">A function that only returns a constant is misleading. Consider declaring a constant instead</span></summary>
+    <ul>
+      <li><span class="location">/Users/juan/Desarrollo/RSSKotlin/app/src/main/java/com/jrodiriguezva/rsskotlin/utils/extension/String.kt:3:1</span><br><span class="message">empty is returning a constant. Prefer declaring a constant instead.</span>
+        <pre><code><span class="lineno">   1 </span>package com.jrodiriguezva.rsskotlin.utils.extension
+<span class="lineno">   2 </span>
+<span class="lineno">   3 </span><span class="error">fun String.Companion.empty() = &quot;&quot;</span>
+<span class="lineno">   4 </span>
+</code></pre>
+      </li>
+    </ul>
+  </details>
+</div>
+
+
+</body>
+</html>

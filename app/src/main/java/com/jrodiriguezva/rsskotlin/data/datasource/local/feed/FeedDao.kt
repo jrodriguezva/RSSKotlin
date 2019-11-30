@@ -1,6 +1,10 @@
 package com.jrodiriguezva.rsskotlin.data.datasource.local.feed
 
-import androidx.room.*
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.Query
+import androidx.room.Transaction
 
 @Dao
 interface FeedDao {

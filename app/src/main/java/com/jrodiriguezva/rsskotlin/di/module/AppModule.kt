@@ -14,7 +14,8 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import java.io.File
-import java.util.*
+import java.util.Date
+import java.util.UUID
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
@@ -24,7 +25,6 @@ class AppModule {
     @Singleton
     @Provides
     fun provideApplicationContext(application: Application): Context = application
-
 
     @Singleton
     @Provides
@@ -54,5 +54,4 @@ class AppModule {
         return Moshi.Builder()
             .add(KotlinJsonAdapterFactory()).add(Date::class.java, Rfc3339DateJsonAdapter().nullSafe()).build()
     }
-
 }

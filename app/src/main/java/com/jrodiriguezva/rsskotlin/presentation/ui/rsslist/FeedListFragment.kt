@@ -16,7 +16,11 @@ import com.jrodiriguezva.rsskotlin.presentation.base.BaseFragmentBinding
 import com.jrodiriguezva.rsskotlin.presentation.navigation.Navigator
 import com.jrodiriguezva.rsskotlin.presentation.ui.endless
 import com.jrodiriguezva.rsskotlin.presentation.ui.rssdetail.FeedView
-import com.jrodiriguezva.rsskotlin.utils.extension.*
+import com.jrodiriguezva.rsskotlin.utils.extension.failure
+import com.jrodiriguezva.rsskotlin.utils.extension.invisible
+import com.jrodiriguezva.rsskotlin.utils.extension.observe
+import com.jrodiriguezva.rsskotlin.utils.extension.viewModel
+import com.jrodiriguezva.rsskotlin.utils.extension.visible
 import kotlinx.android.synthetic.main.rsslist_fragment.*
 import javax.inject.Inject
 
@@ -50,7 +54,6 @@ class FeedListFragment : BaseFragmentBinding<RsslistFragmentBinding>() {
         initializeView()
         loadFeeds()
     }
-
 
     private fun initializeView() {
         feedsList.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
@@ -92,7 +95,6 @@ class FeedListFragment : BaseFragmentBinding<RsslistFragmentBinding>() {
         notifyWithAction(message, R.string.refresh, ::loadFeeds)
     }
 
-
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.menu_search, menu)
         super.onCreateOptionsMenu(menu, inflater)
@@ -117,5 +119,4 @@ class FeedListFragment : BaseFragmentBinding<RsslistFragmentBinding>() {
             }
         })
     }
-
 }

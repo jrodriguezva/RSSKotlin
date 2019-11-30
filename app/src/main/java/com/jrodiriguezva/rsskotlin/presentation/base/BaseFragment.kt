@@ -1,11 +1,11 @@
 package com.jrodiriguezva.rsskotlin.presentation.base
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.annotation.StringRes
-import com.google.android.material.snackbar.Snackbar
-import androidx.fragment.app.Fragment
 import android.view.View
+import androidx.annotation.StringRes
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import com.google.android.material.snackbar.Snackbar
 import com.jrodiriguezva.rsskotlin.di.module.Injectable
 import com.jrodiriguezva.rsskotlin.utils.extension.viewContainer
 import kotlinx.android.synthetic.main.activity_layout.*

@@ -1,31 +1,38 @@
 package com.jrodiriguezva.rsskotlin.presentation.ui.rssdetail
 
-import androidx.fragment.app.FragmentActivity
-import androidx.interpolator.view.animation.FastOutSlowInInterpolator
 import android.transition.Fade
 import android.transition.TransitionManager
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentActivity
+import androidx.interpolator.view.animation.FastOutSlowInInterpolator
 import com.jrodiriguezva.rsskotlin.utils.extension.cancelTransition
 import javax.inject.Inject
 
 class FeedDetailsAnimator
 @Inject constructor() {
+    companion object {
 
-    private val TRANSITION_DELAY = 200L
-    private val TRANSITION_DURATION = 400L
+        private const val TRANSITION_DELAY = 200L
+        private const val TRANSITION_DURATION = 400L
 
-    private val SCALE_UP_VALUE = 1.0F
-    private val SCALE_UP_DURATION = 400L
+        private const val SCALE_UP_VALUE = 1.0F
+        private const val SCALE_UP_DURATION = 400L
 
-    private val SCALE_DOWN_VALUE = 0.0F
-    private val SCALE_DOWN_DURATION = 200L
+        private const val SCALE_DOWN_VALUE = 0.0F
+        private const val SCALE_DOWN_DURATION = 200L
+    }
 
-    internal fun postponeEnterTransition(activity: androidx.fragment.app.FragmentActivity) = activity.postponeEnterTransition()
+    internal fun postponeEnterTransition(activity: FragmentActivity) =
+        activity.postponeEnterTransition()
+
     internal fun cancelTransition(view: View) = view.cancelTransition()
 
-    internal fun scaleUpView(view: View) = scaleView(view, SCALE_UP_VALUE, SCALE_UP_VALUE, SCALE_UP_DURATION)
-    internal fun scaleDownView(view: View) = scaleView(view, SCALE_DOWN_VALUE, SCALE_DOWN_VALUE, SCALE_DOWN_DURATION)
+    internal fun scaleUpView(view: View) =
+        scaleView(view, SCALE_UP_VALUE, SCALE_UP_VALUE, SCALE_UP_DURATION)
+
+    internal fun scaleDownView(view: View) =
+        scaleView(view, SCALE_DOWN_VALUE, SCALE_DOWN_VALUE, SCALE_DOWN_DURATION)
 
     internal fun fadeVisible(viewContainer: ViewGroup, view: View) =
         beginTransitionFor(viewContainer, view, View.VISIBLE)

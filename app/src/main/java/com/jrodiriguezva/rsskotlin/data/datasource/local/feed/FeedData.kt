@@ -1,11 +1,11 @@
 package com.jrodiriguezva.rsskotlin.data.datasource.local.feed
 
+import androidx.annotation.NonNull
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import androidx.annotation.NonNull
 import com.jrodiriguezva.rsskotlin.domain.model.Feed
-import java.util.*
+import java.util.Date
 
 @Entity(tableName = "feed")
 data class FeedData(

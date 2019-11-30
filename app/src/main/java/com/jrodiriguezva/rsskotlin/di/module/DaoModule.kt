@@ -1,7 +1,7 @@
 package com.jrodiriguezva.rsskotlin.di.module
 
-import androidx.room.Room
 import android.content.Context
+import androidx.room.Room
 import com.jrodiriguezva.rsskotlin.data.datasource.local.FeedDatabase
 import dagger.Module
 import dagger.Provides

@@ -1,7 +1,7 @@
 package com.jrodiriguezva.rsskotlin.presentation.ui.rssdetail
 
-import androidx.lifecycle.MutableLiveData
 import android.view.View
+import androidx.lifecycle.MutableLiveData
 import com.jrodiriguezva.rsskotlin.domain.interactor.GetFeedById
 import com.jrodiriguezva.rsskotlin.domain.model.Feed
 import com.jrodiriguezva.rsskotlin.presentation.base.BaseViewModel

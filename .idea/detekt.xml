@@ -5,6 +5,6 @@
     <enableFormatting>true</enableFormatting>
     <buildUponDefaultConfig>true</buildUponDefaultConfig>
     <failFast>true</failFast>
-    <rulesPath>$PROJECT_DIR$/../Git/Android/mascotas/detekt.yml</rulesPath>
+    <rulesPath>$PROJECT_DIR$/../Git/Android/mascotas/config/detekt/detekt.yml</rulesPath>
   </component>
 </project>

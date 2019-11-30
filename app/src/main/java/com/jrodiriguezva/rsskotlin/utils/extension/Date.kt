@@ -1,7 +1,9 @@
 package com.jrodiriguezva.rsskotlin.utils.extension
 
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Calendar
+import java.util.Date
+import java.util.Locale
 
 fun Date.toString(pattern: String): String {
     val format = SimpleDateFormat(pattern, Locale.getDefault())

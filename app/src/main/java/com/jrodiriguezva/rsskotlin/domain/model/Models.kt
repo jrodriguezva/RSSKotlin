@@ -1,6 +1,6 @@
 package com.jrodiriguezva.rsskotlin.domain.model
 
-import java.util.*
+import java.util.Date
 
 data class Feed(
     val id: Long? = null,

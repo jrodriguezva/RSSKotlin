@@ -8,5 +8,4 @@ abstract class FeedDetailModule {
 
     @ContributesAndroidInjector
     abstract fun provideFeedDetailFragment(): FeedDetailFragment
-
 }
